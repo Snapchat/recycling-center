@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues>
+
+    <issue
+        id="DefaultLocale" priority="6" severity="Error"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location file="src/main/java/com/snap/ui/recycling/adapter/LoopingAdapter.java"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale" priority="6" severity="Error"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location file="src/main/java/com/snap/ui/recycling/adapter/LoopingAdapter.java"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale" priority="6" severity="Error"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location file="src/main/java/com/snap/ui/recycling/adapter/LoopingAdapter.java"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale" priority="6" severity="Error"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location file="src/main/java/com/snap/ui/recycling/adapter/LoopingAdapter.java"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale" priority="6" severity="Error"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location file="src/main/java/com/snap/ui/recycling/adapter/LoopingAdapter.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomLinearLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomLinearLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomLinearLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomLinearLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomLinearLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomLinearLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomLinearLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomLinearLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomLinearLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomLinearLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomLinearLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomLinearLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomLinearLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomLinearLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomLinearLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomLinearLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomLinearLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomLinearLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomLinearLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomLinearLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomLinearLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomizableStaggeredGridLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomizableStaggeredGridLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomizableStaggeredGridLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomizableStaggeredGridLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomizableStaggeredGridLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomizableStaggeredGridLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomizableStaggeredGridLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomizableStaggeredGridLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomizableStaggeredGridLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LogNotTimber" priority="5" severity="Error"
+        message="Using &apos;Log&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/androidx/recyclerview/widget/FixedItemSizeLinearLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LongLogTag" priority="5" severity="Error"
+        message="The logging tag can be at most 23 characters, was 26 (StaggeredGridLayoutManager)">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomizableStaggeredGridLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LongLogTag" priority="5" severity="Error"
+        message="The logging tag can be at most 23 characters, was 26 (StaggeredGridLayoutManager)">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomizableStaggeredGridLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LongLogTag" priority="5" severity="Error"
+        message="The logging tag can be at most 23 characters, was 26 (StaggeredGridLayoutManager)">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomizableStaggeredGridLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LongLogTag" priority="5" severity="Error"
+        message="The logging tag can be at most 23 characters, was 26 (StaggeredGridLayoutManager)">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomizableStaggeredGridLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LongLogTag" priority="5" severity="Error"
+        message="The logging tag can be at most 23 characters, was 26 (StaggeredGridLayoutManager)">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomizableStaggeredGridLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LongLogTag" priority="5" severity="Error"
+        message="The logging tag can be at most 23 characters, was 26 (StaggeredGridLayoutManager)">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomizableStaggeredGridLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LongLogTag" priority="5" severity="Error"
+        message="The logging tag can be at most 23 characters, was 26 (StaggeredGridLayoutManager)">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomizableStaggeredGridLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LongLogTag" priority="5" severity="Error"
+        message="The logging tag can be at most 23 characters, was 26 (StaggeredGridLayoutManager)">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomizableStaggeredGridLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="LongLogTag" priority="5" severity="Error"
+        message="The logging tag can be at most 23 characters, was 26 (StaggeredGridLayoutManager)">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomizableStaggeredGridLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="ResourceType" priority="7" severity="Error"
+        message="Comparing resource types (`@IdRes`) other than equality is dangerous and usually wrong;  some resource types set top bit which turns the value negative">
+        <location file="src/main/java/com/snap/ui/recycling/factory/ViewFactory.java"/>
+    </issue>
+
+    <issue
+        id="RxCompositeDisposableClear" priority="1" severity="Information"
+        message="Using dispose() instead of clear() on CompositeDisposable instance.">
+        <location file="src/main/java/com/snap/ui/event/RxBus.java"/>
+    </issue>
+
+    <issue
+        id="RxCompositeDisposableClear" priority="1" severity="Information"
+        message="Using dispose() instead of clear() on CompositeDisposable instance.">
+        <location file="src/main/java/com/snap/ui/recycling/adapter/ObservableViewModelSectionAdapter2.kt"/>
+    </issue>
+
+    <issue
+        id="StaticFieldLeak" priority="6" severity="Error"
+        message="Do not place Android context classes in static fields (static reference to `Inflation` which has field `view` pointing to `View`); this is a memory leak">
+        <location file="src/main/java/com/snap/ui/recycling/prefetch/CompletableViewPrefetcher.kt"/>
+    </issue>
+
+    <issue
+        id="SuppressLint" priority="8" severity="Error"
+        message="noinspection comments are not allowed.">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomizableStaggeredGridLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="SuppressLint" priority="8" severity="Error"
+        message="noinspection comments are not allowed.">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomizableStaggeredGridLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="TagNotPrivateStaticFinal" priority="8" severity="Error"
+        message="TAG field is not private, static, and final">
+        <location file="src/main/java/androidx/recyclerview/widget/CustomLinearLayoutManager.java"/>
+    </issue>
+
+    <issue
+        id="TimberNotAttributedTimber" priority="5" severity="Error"
+        message="Using &apos;Timber&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/com/snap/ui/recycling/adapter/LoopingAdapter.java"/>
+    </issue>
+
+    <issue
+        id="TimberNotAttributedTimber" priority="5" severity="Error"
+        message="Using &apos;Timber&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/com/snap/ui/recycling/adapter/LoopingAdapter.java"/>
+    </issue>
+
+    <issue
+        id="TimberNotAttributedTimber" priority="5" severity="Error"
+        message="Using &apos;Timber&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/com/snap/ui/recycling/adapter/LoopingAdapter.java"/>
+    </issue>
+
+    <issue
+        id="TimberNotAttributedTimber" priority="5" severity="Error"
+        message="Using &apos;Timber&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/com/snap/ui/recycling/adapter/LoopingAdapter.java"/>
+    </issue>
+
+    <issue
+        id="TimberNotAttributedTimber" priority="5" severity="Error"
+        message="Using &apos;Timber&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/com/snap/ui/recycling/adapter/LoopingAdapter.java"/>
+    </issue>
+
+    <issue
+        id="TimberNotAttributedTimber" priority="5" severity="Error"
+        message="Using &apos;Timber&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/com/snap/ui/recycling/prefetch/CompletableViewHolderPrefetcher.kt"/>
+    </issue>
+
+    <issue
+        id="TimberNotAttributedTimber" priority="5" severity="Error"
+        message="Using &apos;Timber&apos; instead of &apos;AttributedTimber&apos;">
+        <location file="src/main/java/com/snap/ui/recycling/prefetch/CompletableViewPrefetcher.kt"/>
+    </issue>
+
+</issues>

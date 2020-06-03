@@ -1,0 +1,17 @@
+--- !OWNERS
+
+# THIS FILE IS AUTO GENERATED, PLEASE DO NOT MODIFY
+
+version: 2
+
+default:
+  jira_project: APP
+  owners:
+    num_required_reviewers: 1
+    teams:
+    - Snapchat/platform-android
+    users:
+    - jokubas-dargis
+    - bdodson
+    - anton-lopyrev
+    - gmoura
