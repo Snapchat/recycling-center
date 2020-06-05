@@ -18,7 +18,7 @@ import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 
 @RunWith(RobolectricTestRunner::class)
-class ObservableViewModelSectionAdapter2Test {
+class ObservableViewModelSectionAdapterTest {
 
     private val viewFactory = mock<ViewFactory>()
     private val eventDispatcher = mock<EventDispatcher>()

@@ -109,7 +109,7 @@ open class ObservableViewModelSectionAdapter
     private fun combineSections(sections: List<ObservableSectionController>): Observable<ItemUpdates> {
         val modelSources = sections.mapIndexed { sectionIndex, section ->
             // Associate each ViewModel with its section
-            section.viewModels
+            section.getViewModels()
                     .map { it as Seekable<AdapterViewModel> }
                     .startWith(emptyObservable)
                     .observeOn(computationScheduler)

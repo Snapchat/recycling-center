@@ -62,7 +62,6 @@ class CompletableViewHolderPrefetcher constructor(
                             }
                             // Layout inflation seems to be causing a race condition in initializing the theme
                             // We can ignore the error for now since this is an optimization
-                            // https://jira.sc-corp.net/browse/APP-14367
                             .doOnError { Log.e(TAG, "Failed to inflate", it) }
                             .onErrorReturnItem(FAILED_INFLATION)
                             .subscribeOn(inflationScheduler)
