@@ -1,6 +1,5 @@
 ## Adding a View to Recycling Center
-Adding a new View to a Recycling Center project is not hard, but involves
-many pieces.
+Adding a new View to a Recycling Center involves a few steps, to set up your View, ViewModel, and ViewBinding.
 
 ### 1. Create your View
 Create a standard Android Layout file in your `res/layout/` directory:
