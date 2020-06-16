@@ -1,15 +1,12 @@
 # Recycling Center
-The Recycling Center is a framework for creating efficient RecyclerViews.
-It is designed around an immutable `ViewModel` pattern, put together in logical
-`Sections` of views.
+Recycling Center is a library designed to support a pattern:
+**reactive, unidirectional data flow** using **immutable ViewModels**. 
+It combines the reactive data flow of RxJava with the efficient UI of a RecyclerView, 
+and supports UI composition via _Sections_ of Views and ViewModels.
 
-The Recycling Center is as much a **pattern** as it is a library, preferring
-**reactive, unidirectional data flow** using **immutable ViewModels**.
-
-## Data, Models, and Views
 ![pipeline](docs/rc_pipeline.png)
 
-## Reference
+## Getting Started
 The Recycling Center uses several primitives to create an efficient `RecyclerView`.
 See the [Adding a Custom View](docs/CustomView.md) guide for how they fit together.
 
