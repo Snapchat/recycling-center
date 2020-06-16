@@ -1,9 +1,7 @@
-# Bitmoji Selfie: Simple Example Using Recycling Center
+# Recycling Center Walkthrough
 
-For the sake of simplicity, we will take a look at [BitmojiSelfieFragment](), which is basically a 
-fragment with a single recycler view at the center of the screen. Each item in the recycler view 
-is a Bitmoji Selfie of the Snapchat user's avatar. This doc walks through
-Bitmoji Selfie related classes in order to show how to use ``recycling-center``   
+This tutorial will describe how to set up a simple RecyclerView using Recycling Center.
+We will create a simple screen that presents a long, scrollable list of Bitmoji images.
 
 <p align="center">
 <img src="bitmoji_selfie_screenshot.png" width="200" height="400"/>
@@ -12,12 +10,14 @@ Bitmoji Selfie related classes in order to show how to use ``recycling-center``
 1. First we need to implement ```AdapterViewType``` which specifies the type of views in the recycler view. In this example, 
 we have two types of views: 1) Top anchor and 2) Bitmoji selfie view. 
 
-    Thus, we define two elements, BITMOJI_SELFIE_TOP_ANCHOR and BITMOJI_SELFIE in the enum class 
-    ```BitmojiSelfieViewType``` to provide mapping from actual layout to view binding class for each type of views.   
+    Define two elements, `BITMOJI_SELFIE_TOP_ANCHOR` and `BITMOJI_SELFIE` in the enum class 
+    ```BitmojiSelfieViewType```. This defines a mapping
+    for each type from its View layout id to the binding class for each type of view:  
     ```kotlin
-    enum class BitmojiSelfieViewType constructor(
+   enum class BitmojiSelfieViewType constructor(
             @LayoutRes private val layoutId: Int,
-            private val viewBindingClass: Class<out ViewBinding<*>>? = null) : BindingAdapterViewType {
+            private val viewBindingClass: Class<out ViewBinding<*>>? = null
+   ) : BindingAdapterViewType {
     
         BITMOJI_SELFIE_TOP_ANCHOR(R.layout.mushroom_bitmoji_selfie_header),
         BITMOJI_SELFIE(BitmojiSelfieViewBinding.LAYOUT_ID, BitmojiSelfieViewBinding::class.java);
@@ -26,20 +26,20 @@ we have two types of views: 1) Top anchor and 2) Bitmoji selfie view.
         override fun getLayoutId() = layoutId
     
         override fun getViewBindingClass() = viewBindingClass
-    }
+   }
     ``` 
 
-2. Let's define ``AdapterViewModel`` for top anchor and bitmoji selfie items before we move on to view binding. 
+2. Let's define ``AdapterViewModel`` for the top anchor and bitmoji selfie items before we move on to view binding. 
 
-    Top anchor is always the same, so just need ``AdapterViewModel`` that has ```AdapterViewType``` (BITMOJI_SELFIE_TOP_ANCHOR)
-    and a unique id provided by ```uniqifyId()``` function. 
+    Top anchor is always the same, we just need an ``AdapterViewModel`` that has a ```AdapterViewType```: 
     ```kotlin
-    class BitmojiSelfieTopAnchorViewModel : AdapterViewModel(BitmojiSelfieViewType.BITMOJI_SELFIE_TOP_ANCHOR,
-           uniqifyId(1L, BitmojiSelfieViewType.BITMOJI_SELFIE_TOP_ANCHOR))
+    class BitmojiSelfieTopAnchorViewModel
+          : AdapterViewModel(BitmojiSelfieViewType.BITMOJI_SELFIE_TOP_ANCHOR)
      ```
 
-    Bitmoji selfie item in the recycler view needs two fields to load the image: ``BitmojiAvatarId`` and ``BitmojiSelfieId``. 
-    Thus we define the class ``BitmojiSelfieViewModel`` as below: 
+    The Bitmoji selfie item in the recycler view needs two fields to load its image,
+    ``BitmojiAvatarId`` and ``BitmojiSelfieId``. 
+    So we define its ViewModel class ``BitmojiSelfieViewModel`` as: 
     ```kotlin
     data class BitmojiSelfieViewModel(
             val bitmojiAvatarId: String,
@@ -57,25 +57,25 @@ we have two types of views: 1) Top anchor and 2) Bitmoji selfie view.
     }
     ```
 
-3. We also need a class that binds ```AdapterViewModel```(ex: ```BitmojiSelfieViewModel```) and ```View``` (view for each 
-Bitmoji selfie item).
+3. Next we need a class that binds an ```AdapterViewModel```(ex: ```BitmojiSelfieViewModel```) to its specific ```View```.
 
     Note that we don't have ```ViewBinding``` class for top anchor because we don't need anything to bind for the anchor. 
-    We just use the view provided by the layout for the top anchor. Below is the class ```BitmojiSelfieViewBinding```, 
+    We just use the view provided by the layout for the top anchor. The ```BitmojiSelfieViewBinding``` is below, 
     which implements methods to set the Bitmoji selfie item's properties. ```onCreate()``` sets the listener and 
-    ```onBind()``` sets the image uri of the view using avatart id and selfie id stored in the ```BitmojiSelfieViewModel```.
+    ```onBind()``` sets the image uri of the view using avatar id and selfie id stored in the ```BitmojiSelfieViewModel```.
     
     ```kotlin
     class BitmojiSelfieViewBinding : ViewBinding<BitmojiSelfieViewModel>() {
     
         companion object {
             val LAYOUT_ID = R.layout.mushroom_bitmoji_selfie_item
+            val IMAGE_ID = R.id.bitmoji_selfie_image
         }
     
         lateinit var selfieImageView: SnapImageView
     
         override fun onCreate(itemView: View) {
-            selfieImageView = itemView.findViewById(R.id.bitmoji_selfie_image)
+            selfieImageView = itemView.findViewById(IMAGE_ID)
             selfieImageView.setOnClickListener(this::onClick)
         }
     
@@ -88,11 +88,12 @@ Bitmoji selfie item).
         }
     }
     ```
-4. As noted in step 1, we have two view types and two sections (one per each view type). So we define two  
-```ObservableSectionController``` classes for each section: ```BitmojiSelfieItemsSection``` and
- ```BitmojiSelfieTopAnchorSection```.
+
+4. As noted in step 1, we have two view types and two sections: one for the anchor, and one for our content.
+   We define two  `ObservableSectionController` classes for each section: `BitmojiSelfieItemsSection` and
+ BitmojiSelfieTopAnchorSection`.
  
-    Top anchor section doesn't change the content, so it's simple.
+    Top anchor section doesn't change the content, so it's simple:
     ```kotlin
     class BitmojiSelfieTopAnchorSection : MainThreadDisposable(), ObservableSectionController {
     
@@ -110,12 +111,8 @@ Bitmoji selfie item).
     ```kotlin
     class BitmojiSelfieItemsSection(
             val userAuthStore: SnapUserStore,
-            val bitmojiFsnHttpInterface: BitmojiFsnHttpInterface,
-            val bitmojiFeature: BitmojiFeature,
             val bitmojiTemplateManager: BitmojiTemplateManager
     ): MainThreadDisposable(), ObservableSectionController {
-    
-        private val schedulers = bitmojiFeature.getSchedulersFor(TAG)
     
         override fun getViewModels(): Observable<Seekable<AdapterViewModel>> {
             val userSessionObservable = userAuthStore.observeUserSession()
@@ -130,7 +127,7 @@ Bitmoji selfie item).
                         } else {
                             val models = bitmojiTemplateList.selfieTemplateIds.map { selfieId ->
                                 userSession.bitmojiAvatarId!!.let { avatarId ->
-                                    BitmojiSelfieViewModel(avatarId, selfieId, bitmojiFeature)
+                                    BitmojiSelfieViewModel(avatarId, selfieId)
                                 }
                             }
                             Seekables.copyOf(models)
@@ -140,30 +137,26 @@ Bitmoji selfie item).
     }
     ```
 
-5. Now we can actually start to use ```recycling-center``` in ```BitmojiSelfiePresenter```.
+5. Now we can start to use ```recycling-center``` in ```BitmojiSelfiePresenter```.
     
     First we create the ```ViewFactory``` with ```BitmojiSelfieViewType``` (Note that ViewFactory class has different 
     types of constructors. Choose appropriate one accordingly with your use case)  
     ```kotlin
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
     fun onFragmentStart() {
-         if (firstOnStartCalled.compareAndSet(false, true)) {
-               target?.let {
-                    // other initialization codes omitted 
-                    recyclerView = it.recyclerView
-                    viewFactory = ViewFactory(BitmojiSelfieViewType::class.java)
-                    initAdapter()
-               }
-         }
+        // other initialization codes omitted 
+       recyclerView = it.recyclerView
+       viewFactory = ViewFactory(BitmojiSelfieViewType::class.java)
+       initAdapter()
     }
     ```
     
-    Initialize ```ObservableViewModelSectionAdapter``` with ```ViewFactory``` initialized above, ```RxBus```,
-    schedulers, and ```List<ObservableSectionController>```. Make sure to do three things after initializing
-    ```ObservableViewModelSectionAdapter```: 
-    1. Set adapter for recyclerView: ```recyclerView.adapter = adapter.recyclerViewAdapter```
-    2. Set layout manager: ```recyclerView.layoutManager = [LayoutManager that meets your needs]```
-    3. Subscribe adapter and make sure it's properly disposed: ```adapter.subscribe().bindTo(this)```
+    Initialize `ObservableViewModelSectionAdapter` with `ViewFactory` initialized above, `RxBus`,
+    schedulers, and `List<ObservableSectionController>`. Make sure to do three things after initializing
+    `ObservableViewModelSectionAdapter`: 
+    1. Set adapter for recyclerView: `recyclerView.adapter = adapter.recyclerViewAdapter`
+    2. Set layout manager: `recyclerView.layoutManager = [LayoutManager that meets your needs]`
+    3. Subscribe adapter and make sure it's properly disposed: `adapter.subscribe().bindTo(this)`
     ```kotlin
     private fun initAdapter() {
        val sections: ImmutableList<ObservableSectionController> = ImmutableList.of(
@@ -172,7 +165,7 @@ Bitmoji selfie item).
                             bitmojiFeature, bitmojiTemplateManager))
             
        adapter = ObservableViewModelSectionAdapter(viewFactory, bus.eventDispatcher,
-                    schedulers.computation(), sections.toList())
+                    Schedulers.computation(), sections.toList())
             
        recyclerView.adapter = adapter.recyclerViewAdapter
        recyclerView.layoutManager = GridLayoutManager(context, SELFIES_PER_ROW)
@@ -182,6 +175,6 @@ Bitmoji selfie item).
     }
     ```
 
-6. Compile and enjoy the recycler view! 
+6. Compile and enjoy your recycler view! 
 
     ![](https://render.bitstrips.com/v2/cpanel/c9fd5973-c9eb-4a54-bfc8-9f8ff7955c3a-e36b1f90-95b4-48b3-99c5-feabb4b2d2b0-v1.png?transparent=1&palette=1)
