@@ -1,5 +1,8 @@
 buildscript {
 
+    ext {
+        kotlin_version = '1.3.72'
+    }
     ext.versions = [
             'androidx': '1.0.0',
             'minSdk'    : 14,
