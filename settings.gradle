@@ -1,2 +1,3 @@
+include ':recycling-example'
 rootProject.name='Recycling Center'
 include ':lib'
