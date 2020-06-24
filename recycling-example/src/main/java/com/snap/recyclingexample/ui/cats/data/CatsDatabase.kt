@@ -1,7 +1,6 @@
 package com.snap.recyclingexample.ui.cats.data
 
 import android.net.Uri
-import com.snap.recyclingexample.ui.cats.*
 import com.snap.recyclingexample.ui.cats.CHEETAH_URI
 import com.snap.recyclingexample.ui.cats.HIMALAYAN_URI
 import com.snap.recyclingexample.ui.cats.LEOPARD_URI
@@ -13,11 +12,8 @@ import com.snap.recyclingexample.ui.cats.RAGDOLL_URI
 import com.snap.recyclingexample.ui.cats.SIAMESE_URI
 import com.snap.recyclingexample.ui.cats.TABBY_URI
 import com.snap.recyclingexample.ui.cats.TIGER_URI
-import com.snap.recyclingexample.ui.cats.view.CatViewModel
-import com.snap.recyclingexample.ui.cats.view.TitleViewModel
 import com.snap.ui.seeking.ListSeekable
 import com.snap.ui.seeking.Seekable
-import com.snap.ui.seeking.Seekables
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
 

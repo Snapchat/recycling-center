@@ -1,7 +1,7 @@
 package com.snap.recyclingexample.ui.cats.view
 
 import android.view.View
-import android.widget.TextView
+import com.google.android.material.chip.Chip
 import com.snap.recyclingexample.R
 import com.snap.recyclingexample.ui.cats.CatPageViewTypes
 import com.snap.recyclingexample.ui.cats.TappedLabelEvent
@@ -20,7 +20,7 @@ data class LabelViewModel(
 
 class LabelViewBinding : ViewBinding<LabelViewModel>() {
 
-    lateinit var titleView: TextView
+    lateinit var titleView: Chip
 
     override fun onCreate(itemView: View) {
         titleView = itemView.findViewById(R.id.title)

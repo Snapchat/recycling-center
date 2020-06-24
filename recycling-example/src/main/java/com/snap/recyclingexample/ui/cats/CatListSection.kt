@@ -5,7 +5,7 @@ import com.snap.recyclingexample.ui.cats.data.CatPageState
 import com.snap.recyclingexample.ui.cats.data.CatType
 import com.snap.recyclingexample.ui.cats.data.CatsDatabase
 import com.snap.recyclingexample.ui.cats.view.CatViewModel
-import com.snap.recyclingexample.ui.cats.view.TitleViewModel
+import com.snap.recyclingexample.ui.cats.view.HeaderViewModel
 import com.snap.ui.recycling.ObservableSectionController
 import com.snap.ui.recycling.viewmodel.AdapterViewModel
 import com.snap.ui.seeking.ListSeekable
@@ -13,7 +13,6 @@ import com.snap.ui.seeking.Seekable
 import com.snap.ui.seeking.Seekables
 import io.reactivex.Observable
 import io.reactivex.functions.BiFunction
-import io.reactivex.schedulers.Schedulers
 import java.util.concurrent.atomic.AtomicBoolean
 
 class CatListSection(
@@ -45,19 +44,19 @@ class CatListSection(
 
                     val bigModels: Seekable<AdapterViewModel> = if (big.isEmpty()) Seekables.empty() else ListSeekable(
                             big.toMutableList<AdapterViewModel>().apply {
-                                add(0, TitleViewModel("Big Cats"))
+                                add(0, HeaderViewModel("Big Cats"))
                             }
                     )
 
                     val mediumModels: Seekable<AdapterViewModel> = if (medium.isEmpty()) Seekables.empty() else ListSeekable(
                             medium.toMutableList<AdapterViewModel>().apply {
-                                add(0, TitleViewModel("Medium Cats"))
+                                add(0, HeaderViewModel("Medium Cats"))
                             }
                     )
 
                     val smallModels: Seekable<AdapterViewModel> = if (small.isEmpty()) Seekables.empty() else ListSeekable(
                             small.toMutableList<AdapterViewModel>().apply {
-                                add(0, TitleViewModel("Small Cats"))
+                                add(0, HeaderViewModel("Small Cats"))
                             }
                     )
 

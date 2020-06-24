@@ -7,7 +7,7 @@ import com.snap.recyclingexample.ui.cats.CatPageViewTypes
 import com.snap.ui.recycling.ViewBinding
 import com.snap.ui.recycling.viewmodel.AdapterViewModel
 
-data class TitleViewModel(
+data class HeaderViewModel(
         val title: String
 ) : AdapterViewModel(CatPageViewTypes.TITLE, title.hashCode().toLong() /* sorry */) {
 
@@ -16,7 +16,7 @@ data class TitleViewModel(
     }
 }
 
-class TitleViewBinding : ViewBinding<TitleViewModel>() {
+class HeaderViewBinding : ViewBinding<HeaderViewModel>() {
 
     lateinit var titleView: TextView
 
@@ -24,7 +24,7 @@ class TitleViewBinding : ViewBinding<TitleViewModel>() {
         titleView = itemView.findViewById(R.id.title)
     }
 
-    override fun onBind(model: TitleViewModel, previousModel: TitleViewModel?) {
+    override fun onBind(model: HeaderViewModel, previousModel: HeaderViewModel?) {
         titleView.text = model.title
     }
 }
