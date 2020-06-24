@@ -71,6 +71,13 @@ class CatListSection(
                 return false
             }
         }
+
+        if (!pageState.showFluffyCats) {
+            if (cat.name == "Lion" || cat.name == "Ragdoll" || cat.name == "Himalayan" || cat.name == "Persian") {
+                return false
+            }
+        }
+
         return true
     }
 

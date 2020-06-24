@@ -25,7 +25,8 @@ class CatLabelsSection(
                     LabelViewModel("Show Big Cats", pageState.showBigCats),
                     LabelViewModel("Show Medium Cats", pageState.showMediumCats),
                     LabelViewModel("Show Small Cats", pageState.showSmallCats),
-                    LabelViewModel("Show Striped Cats", pageState.showStripedCats)
+                    LabelViewModel("Show Striped Cats", pageState.showStripedCats),
+                    LabelViewModel("Show Fluffy Cats", pageState.showFluffyCats)
             )
             Seekables.of(LabelScroller(viewFactory, eventDispatcher, labels))
         }
