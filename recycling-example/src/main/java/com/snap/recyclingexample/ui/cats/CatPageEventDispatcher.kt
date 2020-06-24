@@ -20,6 +20,9 @@ class CatPageEventDispatcher(
                 if (event.model.title == "Show Small Cats") {
                     pageStateProvider.update(pageState.copy(showSmallCats = !pageState.showSmallCats))
                 }
+                if (event.model.title == "Show Striped Cats") {
+                    pageStateProvider.update(pageState.copy(showStripedCats = !pageState.showStripedCats))
+                }
             }
         }
     }

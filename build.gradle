@@ -17,6 +17,7 @@ buildscript {
             androidGradlePlugin: 'com.android.tools.build:gradle:3.6.2',
             assertj_core: 'org.assertj:assertj-core:3.9.1',
             junit: 'junit:junit:4.12',
+            coil: 'io.coil-kt:coil:0.11.0',
             kotlin: [
                     gradlePlugin: "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}",
                     stdlib: "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}",
@@ -33,6 +34,7 @@ buildscript {
                     'v13': "androidx.legacy:legacy-support-v13:1.0.0",
                     'recyclerview': "androidx.recyclerview:recyclerview:1.0.0",
                     'emojiAppCompat': "androidx.emoji:emoji-appcompat:1.0.0",
+                    'multidex': 'androidx.multidex:multidex:2.0.1'
             ],
             'mockito': [
                     'android': 'org.mockito:mockito-android:3.1.0',

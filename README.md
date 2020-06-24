@@ -7,9 +7,9 @@ and supports UI composition via _Sections_ of Views and ViewModels.
 ![pipeline](docs/rc_pipeline.png)
 
 ## Getting Started
-The Recycling Center uses several primitives to create an efficient `RecyclerView`.
-See the [Adding a Custom View](docs/CustomView.md) guide for how they fit together.
-
+Recycling Center uses several primitives to create an efficient `RecyclerView`.
+See the [Adding a Custom View](docs/CustomView.md) guide for how they fit together, and
+a [code sample](recycling-example) to see it in action.
 
 * [AdapterViewType](./lib/src/main/java/com/snap/ui/recycling/AdapterViewType.kt):
 Each view in the RecyclerView has an enumerated type.

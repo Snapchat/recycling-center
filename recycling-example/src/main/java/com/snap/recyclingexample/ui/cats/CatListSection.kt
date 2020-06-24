@@ -1,5 +1,6 @@
 package com.snap.recyclingexample.ui.cats
 
+import com.snap.recyclingexample.ui.cats.data.CatData
 import com.snap.recyclingexample.ui.cats.data.CatPageState
 import com.snap.recyclingexample.ui.cats.data.CatType
 import com.snap.recyclingexample.ui.cats.data.CatsDatabase
@@ -29,14 +30,17 @@ class CatListSection(
 
                     val big = if (!pageState.showBigCats) listOf() else cats
                             .filter { it.type == CatType.Big }
+                            .filter { catFilter(it, pageState) }
                             .map { CatViewModel(it) }
 
                     val medium = if (!pageState.showMediumCats) listOf() else cats
                             .filter { it.type == CatType.Medium }
+                            .filter { catFilter(it, pageState) }
                             .map { CatViewModel(it) }
 
                     val small = if (!pageState.showSmallCats) listOf() else cats
                             .filter { it.type == CatType.Small }
+                            .filter { catFilter(it, pageState) }
                             .map { CatViewModel(it) }
 
                     val bigModels: Seekable<AdapterViewModel> = if (big.isEmpty()) Seekables.empty() else ListSeekable(
@@ -61,6 +65,14 @@ class CatListSection(
                 })
     }
 
+    private fun catFilter(cat: CatData, pageState: CatPageState): Boolean {
+        if (!pageState.showStripedCats) {
+            if (cat.name == "Tiger" || cat.name == "Tabby" || cat.name == "Ocicat") {
+                return false
+            }
+        }
+        return true
+    }
 
     override fun dispose() {
         disposed.set(true)

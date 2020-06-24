@@ -24,7 +24,8 @@ class CatLabelsSection(
             val labels = listOf(
                     LabelViewModel("Show Big Cats", pageState.showBigCats),
                     LabelViewModel("Show Medium Cats", pageState.showMediumCats),
-                    LabelViewModel("Show Small Cats", pageState.showSmallCats)
+                    LabelViewModel("Show Small Cats", pageState.showSmallCats),
+                    LabelViewModel("Show Striped Cats", pageState.showStripedCats)
             )
             Seekables.of(LabelScroller(viewFactory, eventDispatcher, labels))
         }

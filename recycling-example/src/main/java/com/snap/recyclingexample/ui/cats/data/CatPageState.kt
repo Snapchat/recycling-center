@@ -8,7 +8,7 @@ data class CatPageState(
         val showBigCats: Boolean = true,
         val showMediumCats: Boolean = true,
         val showSmallCats: Boolean = true,
-        val showSpottedCats: Boolean = true
+        val showStripedCats: Boolean = true
 )
 
 class CatPageStateProvider {
