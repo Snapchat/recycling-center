@@ -3,6 +3,11 @@ package com.snap.recyclingexample.ui.cats
 import com.snap.recyclingexample.ui.cats.data.CatPageStateProvider
 import com.snap.ui.event.EventDispatcher
 
+/**
+ * There are a few different styles of [EventDispatcher] available in Recycling Center.
+ * [SimpleBus] provides an implementation backed by EventBus for simple, reflection-based dispatching.
+ * [RxEventDispatcher] binds a mapping from event to a dedicated handler, powered by RxJava.
+ */
 class CatPageEventDispatcher(
         private val pageStateProvider: CatPageStateProvider
 ) : EventDispatcher {
