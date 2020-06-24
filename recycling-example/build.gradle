@@ -9,6 +9,7 @@ android {
         applicationId "com.snap.recyclingexample"
         minSdkVersion 16
         targetSdkVersion 29
+        multiDexEnabled true
         versionCode 1
         versionName "1.0"
 
@@ -32,6 +33,11 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    implementation project(':lib')
+    implementation deps.rx.java
+    implementation deps.coil
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.1.0'
     implementation 'androidx.appcompat:appcompat:1.1.0'
