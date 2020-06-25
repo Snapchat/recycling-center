@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    resourcePrefix 'recycling_center'
+    resourcePrefix 'recycling_center_'
     compileSdkVersion versions.compileSdk
 
     compileOptions {
