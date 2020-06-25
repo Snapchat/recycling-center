@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicBoolean
 
 class CursorSeekable<T>(
     private val cursor: Cursor,
-    internal var mapper: Function<Cursor, T>
+    private var mapper: Function<Cursor, T>
 ) : Seekable<T>, Disposable {
 
     private val disposed = AtomicBoolean(false)
