@@ -7,8 +7,7 @@ class ConcatSeekable<T>(private val list: List<Seekable<T>>) : Seekable<T> {
 
     override fun get(position: Int): T {
         var positionInSection = position
-        for (i in 0 until list.size) {
-            val section = list[i]
+        for (section in list) {
             val sectionSize = section.size()
             if (positionInSection < sectionSize) {
                 return section[positionInSection]

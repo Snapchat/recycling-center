@@ -22,9 +22,7 @@ class CursorSeekable<T>(
      * of the data set. You may want to ensure the first call to this method or [Cursor.getCount]
      * occurs on a background thread.
      */
-    override fun size(): Int {
-        return cursor.count
-    }
+    override fun size(): Int = cursor.count
 
     override fun get(position: Int): T {
         if (position < 0 || position >= cursor.count) {
