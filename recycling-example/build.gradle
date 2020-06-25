@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.snap.recyclingexample"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 29
         multiDexEnabled true
         versionCode 1
