@@ -7,7 +7,7 @@ import kotlin.math.min
  * If `spliceAt` is beyond the length of `content`, then `splice`
  * is appended to the end of `content`.
  */
-class SplicingSeekable<T>(
+internal class SplicingSeekable<T>(
     private val content: Seekable<T>,
     private val splice: Seekable<T>,
     private val splicePosition: Int

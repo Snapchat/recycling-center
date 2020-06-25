@@ -3,7 +3,7 @@ package com.snap.ui.seeking
 /**
  * A Seekable made by concatenating a list of Seekables together.
  */
-class ConcatSeekable<T>(private val list: List<Seekable<T>>) : Seekable<T> {
+internal class ConcatSeekable<T>(private val list: List<Seekable<T>>) : Seekable<T> {
 
     override fun get(position: Int): T {
         var positionInSection = position

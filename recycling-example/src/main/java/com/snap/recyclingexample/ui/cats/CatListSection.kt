@@ -8,7 +8,6 @@ import com.snap.recyclingexample.ui.cats.view.CatViewModel
 import com.snap.recyclingexample.ui.cats.view.HeaderViewModel
 import com.snap.ui.recycling.ObservableSectionController
 import com.snap.ui.recycling.viewmodel.AdapterViewModel
-import com.snap.ui.seeking.ListSeekable
 import com.snap.ui.seeking.Seekable
 import com.snap.ui.seeking.Seekables
 import io.reactivex.Observable
@@ -42,19 +41,19 @@ class CatListSection(
                             .filter { catFilter(it, pageState) }
                             .map { CatViewModel(it) }
 
-                    val bigModels: Seekable<AdapterViewModel> = if (big.isEmpty()) Seekables.empty() else ListSeekable(
+                    val bigModels: Seekable<AdapterViewModel> = if (big.isEmpty()) Seekables.empty() else Seekables.copyOf(
                             big.toMutableList<AdapterViewModel>().apply {
                                 add(0, HeaderViewModel("Big Cats"))
                             }
                     )
 
-                    val mediumModels: Seekable<AdapterViewModel> = if (medium.isEmpty()) Seekables.empty() else ListSeekable(
+                    val mediumModels: Seekable<AdapterViewModel> = if (medium.isEmpty()) Seekables.empty() else Seekables.copyOf(
                             medium.toMutableList<AdapterViewModel>().apply {
                                 add(0, HeaderViewModel("Medium Cats"))
                             }
                     )
 
-                    val smallModels: Seekable<AdapterViewModel> = if (small.isEmpty()) Seekables.empty() else ListSeekable(
+                    val smallModels: Seekable<AdapterViewModel> = if (small.isEmpty()) Seekables.empty() else Seekables.copyOf(
                             small.toMutableList<AdapterViewModel>().apply {
                                 add(0, HeaderViewModel("Small Cats"))
                             }

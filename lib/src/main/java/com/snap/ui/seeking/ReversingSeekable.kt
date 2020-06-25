@@ -3,7 +3,7 @@ package com.snap.ui.seeking
 /**
  * A Seekable that reverses another Seekable.
  */
-class ReversingSeekable<T>(private val source: Seekable<T>) : Seekable<T> {
+internal class ReversingSeekable<T>(private val source: Seekable<T>) : Seekable<T> {
 
     override fun get(position: Int): T = source[size() - position - 1]
 
