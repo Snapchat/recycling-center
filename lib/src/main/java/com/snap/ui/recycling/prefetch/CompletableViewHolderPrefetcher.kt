@@ -71,6 +71,7 @@ class CompletableViewHolderPrefetcher constructor(
                 .ignoreElements()
     }
 
+    @Suppress("UNCHECKED_CAST")
     fun <T : View> load(layoutId: Int): Single<T> {
         return Single.just(layoutId)
                 .doOnSubscribe { TraceCompat.beginSection("view:load") }
