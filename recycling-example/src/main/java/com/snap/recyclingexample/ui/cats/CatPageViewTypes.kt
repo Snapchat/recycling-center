@@ -3,8 +3,8 @@ package com.snap.recyclingexample.ui.cats
 import androidx.annotation.LayoutRes
 import com.snap.recyclingexample.R
 import com.snap.recyclingexample.ui.cats.view.CatViewBinding
-import com.snap.recyclingexample.ui.cats.view.LabelViewBinding
 import com.snap.recyclingexample.ui.cats.view.HeaderViewBinding
+import com.snap.recyclingexample.ui.cats.view.LabelViewBinding
 import com.snap.ui.recycling.BindingAdapterViewType
 import com.snap.ui.recycling.HorizontalRecyclerViewBinding
 import com.snap.ui.recycling.ViewBinding
