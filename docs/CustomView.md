@@ -35,26 +35,11 @@ Create a standard Android Layout file in your `res/layout/` directory:
 A *View Model* (of type `AdapterViewModel`) should have all the properties needed to populate your View.
 Ideally, the View Model should be immutable and contain simple, pre-computed properties.
 
-```java
-class MyProjectBasicViewModel {
-
-    private final String mLabel;
-    private final Uri mIconUri;
-
-    public MyProjectBasicViewModel(long modelId, String label, Uri iconUri) {
-        super(MyProjectViewType.BASIC, modelId);
-        mLabel = label;
-        mIconUri = iconUri;
-    }
-
-    public String getLabel() {
-        return mLabel;
-    }
-
-    public Ui getIconUri() {
-        return mIconUri;
-    }
-}
+```kotlin
+class MyProjectBasicViewModel(
+    val label: String,
+    val iconUri: Uri
+)
 ```
 
 An important property of the ViewModel is the numeric **modelId** field. RecyclerViews need a stable,
@@ -67,35 +52,26 @@ String-based identifiers, you can track a mapping from `String` to `long` for th
 ### 3. Create your ViewBinding
 The *View Binding* maps your `ViewModel` onto your `View`:
 
-```java
-public class MyProjectBasicViewBinding extends ViewBinding<MyProjectBasicViewModel> {
+```kotlin
+class MyProjectBasicViewBinding : ViewBinding<MyProjectBasicViewModel> {
 
-    public static final @LayoutRes int LAYOUT = R.layout.myproject_basic;
-
-    private TextView mLabel;
-    private ImageView mIcon;
-
-    @Override
-    protected void onCreate(View itemView) {
-        mName = itemView.findViewById(R.id.label);
-        mIcon = itemView.findViewById(R.id.icon);
-        itemView.setOnClickListener(mOnClickListener);
+    companion object {
+        @LayoutRes val LAYOUT = R.layout.myproject_basic
     }
 
-    @Override
-    protected void onBind(MyProjectBasicViewModel model,
-                          MyProjectBasicViewModel previousModel) {
+    private val label: TextView;
+    private val icon: ImageView;
 
-        mLabel.setText(model.getLabel());
-        mIcon.setImageUri(model.getIconUri());
+    override fun onCreate(itemView: View) {
+        label = itemView.findViewById(R.id.label);
+        icon = itemView.findViewById(R.id.icon);
+        itemView.setOnClickListener { /*...*/ };
     }
 
-    private final View.OnClickListener mOnClickListener = new OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            // TODO
-        }
-    };
+    override fun onBind(model: MyProjectBasicViewModel, previousModel: MyProjectBasicViewModel?) {
+        label.text = model.label;
+        icon.imageUri = model.iconUri);
+    }
 }
 
 ```
@@ -104,31 +80,14 @@ public class MyProjectBasicViewBinding extends ViewBinding<MyProjectBasicViewMod
 The `ViewType` specifies how to bind a `View`, and creates a reference that a
 `ViewModel` uses to specify its binding:
 
-```java
-public enum MyProjectViewType implements BindingAdapterViewType {
-
-    BASIC(MyProjectBasicViewBinding.class, MyProjectBasicViewBinding.LAYOUT),
-    COMPLEX(MyProjectComplexViewBinding.class, MyProjectComplexViewBinding.LAYOUT),
-    HEADER(MyProjectHeaderViewBinding.class, MyProjectHeaderViewBinding.LAYOUT),
-    ;
-
-    private final @LayoutRes int mLayoutId;
-    private final Class<? extends ViewBinding> mBindingClass;
-
-    SendToViewType(Class<? extends ViewBinding> binding, @LayoutRes int layoutId) {
-        mBindingClass = binding;
-        mLayoutId = layoutId;
-    }
-
-    @Override
-    @LayoutRes public int getLayoutId() {
-        return mLayoutId;
-    }
-
-    @Override
-    public Class<? extends ViewBinding> getViewBindingClass() {
-        return mBindingClass;
-    }
+```kotlin
+enum class MyItemViewType(
+    override val layoutId: Int,
+    override val viewBindingClass: Class<out ViewBinding<*>>? = null
+) : BindingAdapterViewType {
+    BASIC(MyProjectBasicViewBinding.LAYOUT, MyProjectBasicViewBinding::class.java),
+    COMPLEX(MyProjectComplexViewBinding.LAYOUT, MyProjectComplexViewBinding::class.java),
+    HEADER(MyProjectHeaderViewBinding.LAYOUT, MyProjectHeaderViewBinding::class.java),
 }
 ```
 
@@ -139,10 +98,10 @@ can instantiate your view and bind your model when needed:
 ```java
 ...
 myViewModels.add(new MyProjectBasicViewModel(
-            data.getId(),
-            data.getLabel(),
-            Uri.fromFile(data.getIconFilePath()))
+            data.id,
+            data.label,
+            Uri.fromFile(data.iconFilePath))
      );
 
-mViewModelAdapter.updateViewModels(Seekables.copyOf(myViewModels));
+viewModelAdapter.updateViewModels(Seekables.copyOf(myViewModels));
 ```
