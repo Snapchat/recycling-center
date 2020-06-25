@@ -31,7 +31,6 @@ buildscript {
             ],
             'androidx': [
                     'annotation': "androidx.annotation:annotation:${versions.androidx}",
-                    'v13': "androidx.legacy:legacy-support-v13:1.0.0",
                     'recyclerview': "androidx.recyclerview:recyclerview:1.0.0",
                     'emojiAppCompat': "androidx.emoji:emoji-appcompat:1.0.0",
                     'multidex': 'androidx.multidex:multidex:2.0.1'

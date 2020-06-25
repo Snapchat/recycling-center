@@ -22,7 +22,6 @@ dependencies {
     implementation deps.guava.android
     implementation deps.rx.android
     implementation deps.rx.java
-    implementation deps.androidx.v13
     implementation deps.androidx.annotation
     implementation deps.androidx.recyclerview
     implementation deps.androidx.emojiAppCompat
