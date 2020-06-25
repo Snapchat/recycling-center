@@ -191,7 +191,7 @@ public class LoopingAdapter<T extends ViewHolder> extends RecyclerView.Adapter<T
         } else {
             // Scroll to the position with previous scroll offset so user don't see flickering when updating data
             final int scrollOffset =
-                    layoutManager.getOrientation() == LinearLayoutManager.VERTICAL ? scrollOffsetY : scrollOffsetX;
+                    layoutManager.getOrientation() == RecyclerView.VERTICAL ? scrollOffsetY : scrollOffsetX;
             layoutManager.scrollToPositionWithOffset(
                     getLoopingPosition(adapter.getItemCount(), currentPosition),
                     scrollOffset);

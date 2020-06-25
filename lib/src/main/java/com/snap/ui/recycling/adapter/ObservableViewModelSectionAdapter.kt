@@ -295,9 +295,12 @@ open class ObservableViewModelSectionAdapter
         override fun getNewListSize() = newModels.size()
 
         override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-            val first = oldModels[oldItemPosition]
-            val second = newModels[newItemPosition]
-            return first.model.areContentsTheSame(second.model)
+            // DiffUtil does not respect the contract of calling
+            // areContentsTheSame only when areItemsTheSame returns true
+            // cf https://issuetracker.google.com/issues/123376278
+            val firstModel = oldModels[oldItemPosition].model
+            val secondModel = newModels[newItemPosition].model
+            return firstModel.areItemsTheSame(secondModel) && firstModel.areContentsTheSame(secondModel)
         }
 
         override fun getChangePayload(oldItemPosition: Int, newItemPosition: Int) = oldModels[oldItemPosition]
