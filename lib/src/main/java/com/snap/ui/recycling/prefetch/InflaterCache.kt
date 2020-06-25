@@ -1,8 +1,8 @@
 package com.snap.ui.recycling.prefetch
 
 import android.util.LongSparseArray
+import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
-import androidx.appcompat.view.ContextThemeWrapper
 import java.lang.ref.WeakReference
 
 /**

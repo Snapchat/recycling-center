@@ -23,7 +23,6 @@ dependencies {
     implementation deps.rx.android
     implementation deps.rx.java
     implementation deps.androidx.annotation
-    implementation deps.androidx.appcompat
     implementation deps.androidx.recyclerview
 
     implementation deps.kotlin.stdlib
