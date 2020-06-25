@@ -28,7 +28,7 @@ class CatPageFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
-        recyclerView = root.findViewById(R.id.recycer_view)
+        recyclerView = root.findViewById(R.id.recycler_view)
 
         val pageStateSource = CatPageStateProvider()
         val eventDispatcher = CatPageEventDispatcher(pageStateSource)
