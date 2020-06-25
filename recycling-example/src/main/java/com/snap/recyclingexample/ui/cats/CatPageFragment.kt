@@ -14,7 +14,7 @@ import com.snap.ui.recycling.adapter.ObservableViewModelSectionAdapter
 import com.snap.ui.recycling.factory.ViewFactory
 import io.reactivex.disposables.CompositeDisposable
 
-class CatPageFragment : Fragment(R.layout.fragment_dashboard) {
+class CatPageFragment : Fragment(R.layout.fragment_cat_page) {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var observableAdapter: ObservableViewModelSectionAdapter
