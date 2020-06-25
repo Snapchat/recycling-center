@@ -14,7 +14,7 @@ import com.snap.ui.recycling.adapter.ObservableViewModelSectionAdapter
 import com.snap.ui.recycling.factory.ViewFactory
 import io.reactivex.disposables.CompositeDisposable
 
-class CatPageFragment : Fragment() {
+class CatPageFragment : Fragment(R.layout.fragment_dashboard) {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var observableAdapter: ObservableViewModelSectionAdapter
@@ -22,13 +22,8 @@ class CatPageFragment : Fragment() {
 
     private val catsDatabase = CatsDatabase()
 
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
-        recyclerView = root.findViewById(R.id.recycler_view)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        recyclerView = view.findViewById(R.id.recycler_view)
 
         val pageStateSource = CatPageStateProvider()
         val eventDispatcher = CatPageEventDispatcher(pageStateSource)
@@ -57,7 +52,6 @@ class CatPageFragment : Fragment() {
                 LinearLayoutManager.VERTICAL,
                 false
         )
-        return root
     }
 
     override fun onResume() {
