@@ -4,7 +4,7 @@ package com.snap.ui.seeking
  * Wraps a [java.util.List] as a [Seekable].
  */
 
-data class ListSeekable<T>(private val list: List<T>) : Seekable<T> {
+internal data class ListSeekable<T>(private val list: List<T>) : Seekable<T> {
 
     override fun get(position: Int): T = list[position]
 

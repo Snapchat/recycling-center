@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicBoolean
 
 class CursorSeekable<T>(
     private val cursor: Cursor,
-    internal var mapper: Function<Cursor, T>
+    private var mapper: Function<Cursor, T>
 ) : Seekable<T>, Disposable {
 
     private val disposed = AtomicBoolean(false)
@@ -22,9 +22,7 @@ class CursorSeekable<T>(
      * of the data set. You may want to ensure the first call to this method or [Cursor.getCount]
      * occurs on a background thread.
      */
-    override fun size(): Int {
-        return cursor.count
-    }
+    override fun size(): Int = cursor.count
 
     override fun get(position: Int): T {
         if (position < 0 || position >= cursor.count) {

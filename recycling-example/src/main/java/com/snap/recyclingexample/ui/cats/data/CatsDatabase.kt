@@ -12,8 +12,8 @@ import com.snap.recyclingexample.ui.cats.RAGDOLL_URI
 import com.snap.recyclingexample.ui.cats.SIAMESE_URI
 import com.snap.recyclingexample.ui.cats.TABBY_URI
 import com.snap.recyclingexample.ui.cats.TIGER_URI
-import com.snap.ui.seeking.ListSeekable
 import com.snap.ui.seeking.Seekable
+import com.snap.ui.seeking.Seekables
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
 
@@ -24,7 +24,7 @@ class CatsDatabase {
             // Simulates a stable id
             var catId = 0L
 
-            ListSeekable(listOf(
+            Seekables.copyOf(listOf(
                     CatData(
                             catId++,
                             CatType.Big,

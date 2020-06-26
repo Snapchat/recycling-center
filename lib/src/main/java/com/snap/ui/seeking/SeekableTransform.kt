@@ -3,7 +3,7 @@ package com.snap.ui.seeking
 /**
  * A Seekable that maps each item from a given Seekable.
  */
-class SeekableTransform<S, T> internal constructor(
+internal class SeekableTransform<S, T> internal constructor(
     private val source: Seekable<S>,
     private val mapping: (s: S, position: Int) -> T
 ) : Seekable<T> {
