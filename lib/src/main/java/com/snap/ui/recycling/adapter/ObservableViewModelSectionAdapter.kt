@@ -106,11 +106,12 @@ open class ObservableViewModelSectionAdapter
             .subscribe(::applyAdapterUpdates)
     }
 
+    @Suppress("UNCHECKED_CAST")
     private fun combineSections(sections: List<ObservableSectionController>): Observable<ItemUpdates> {
         val modelSources = sections.mapIndexed { sectionIndex, section ->
             // Associate each ViewModel with its section
             section.getViewModels()
-                    .map { it as Seekable<AdapterViewModel> }
+                    .map { it }
                     .startWith(emptyObservable)
                     .observeOn(computationScheduler)
                     .map { models -> trace("section:$sectionIndex") {
@@ -132,8 +133,8 @@ open class ObservableViewModelSectionAdapter
         }
 
         return combineLatest(modelSources) { array ->
-            var currentGen = 0L
-            var currentData: Seekable<SectionItemInfo> = Seekables.empty()
+            var currentGen: Long
+            var currentData: Seekable<SectionItemInfo>
 
             // If results have not come back from any sections, don't notify the adapter
             val hasResults = array.isNotEmpty() &&
